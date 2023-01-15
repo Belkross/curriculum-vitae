@@ -1,7 +1,6 @@
 import React, { createContext, ReactElement, useContext, useState } from "react"
 
 export type ThemeModeValue = "light" | "dark"
-
 const defaultThemeMode: ThemeModeValue = "dark"
 
 const ThemeModeContext = createContext<ThemeModeValue>(defaultThemeMode)
