@@ -2,7 +2,6 @@ import React from "react"
 import { createGlobalStyle, ThemeProvider } from "styled-components"
 import { palette } from "../theme/palettes"
 import { useThemeMode } from "./provider-theme-mode"
-import "@fontsource/roboto"
 
 type Props = {
   children: React.ReactNode
