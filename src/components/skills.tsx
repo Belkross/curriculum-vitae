@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react"
 
 type Props = {}
 
 export default function Skills({}: Props) {
   return (
-    <div>skills</div>
+    <section>
+      <h2>Compétences</h2>
+    </section>
   )
 }
