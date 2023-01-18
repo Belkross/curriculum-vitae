@@ -2,6 +2,9 @@ import React from "react"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
 import { PageContent } from "../types"
 import { useLanguage } from "./provider-language"
+import { Icon } from "@iconify/react"
+import styled from "styled-components"
+import palette from "../theme/palette"
 
 type Props = {}
 
@@ -11,7 +14,12 @@ export default function PersonalInformations({}: Props) {
     <section>
       <h2>Informations personnelles</h2>
       <address>
-        <p>{content.town[lang]}</p>
+        <IconField>
+          <Button>
+            <Icon icon="mdi:city-variant" width="25" />
+          </Button>
+          <p>{content.town[lang]}</p>
+        </IconField>
         <p>{content.phone[lang]}</p>
         <p>{content.mail[lang]}</p>
         <p>{content.github[lang]}</p>
@@ -24,6 +32,28 @@ export default function PersonalInformations({}: Props) {
     </section>
   )
 }
+
+const Button = styled.button`
+  background-color: ${palette.background};
+  color: ${palette.text};
+  width: 35px;
+  height: 35px;
+  padding: 0;
+  border-width: 1px;
+  border-style: solid;
+  border-color: ${palette.paper};
+  border-radius: 3px;
+  :hover {
+    background-color: ${palette.primary};
+  }
+`
+
+const IconField = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 6px;
+`
 
 const content: PageContent = fullfillNonDefaultLanguageFields({
   town: {
