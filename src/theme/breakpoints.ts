@@ -1,33 +1,35 @@
-type BreakpointsValues = {
-  xs: number
-  sm: number
-  md: number
-  lg: number
-  xl: number
-  xxl: number
+type Breakpoints<Type> = {
+  xs: Type
+  sm: Type
+  md: Type
+  lg: Type
+  xl: Type
+  xxl: Type
 }
+type BreakpointValues = Breakpoints<number>
 
-type MediaQueries<Type> = {
-  [Property in keyof Type]: string
-}
+class StyledBreakpoints implements Breakpoints<string> {
+  xs: string
+  sm: string
+  md: string
+  lg: string
+  xl: string
+  xxl: string
 
-class Breakpoints implements MediaQueries<BreakpointsValues> {
-  xs = ""
-  sm = ""
-  md = ""
-  lg = ""
-  xl = ""
-  xxl = ""
-  constructor(breakpointValues: BreakpointsValues) {
-    for (let property in breakpointValues) {
-      this[property as keyof Breakpoints] = `@media (min-width: ${
-        breakpointValues[property as keyof BreakpointsValues]
-      }px)`
+  constructor(values: Breakpoints<number>) {
+    const formatToStyledComponent = (key: keyof BreakpointValues) => {
+      return `@media (min-width: ${values[key as keyof BreakpointValues]}px)`
     }
+    this.xs = formatToStyledComponent("xs")
+    this.sm = formatToStyledComponent("sm")
+    this.md = formatToStyledComponent("md")
+    this.lg = formatToStyledComponent("lg")
+    this.xl = formatToStyledComponent("xl")
+    this.xxl = formatToStyledComponent("xxl")
   }
 }
 
-export const breakpointValues: BreakpointsValues = {
+export const breakpointValues: BreakpointValues = {
   xs: 350,
   sm: 640,
   md: 768,
@@ -36,4 +38,4 @@ export const breakpointValues: BreakpointsValues = {
   xxl: 1536,
 }
 
-export const breakpoints = new Breakpoints(breakpointValues)
+export const breakpoints = new StyledBreakpoints(breakpointValues)
