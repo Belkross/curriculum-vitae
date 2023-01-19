@@ -11,6 +11,7 @@ import Hobbies from "../components/hobbies"
 import Header from "../components/header"
 import PhotoWideScreen from "../components/photo-wide-screen"
 import styled from "styled-components"
+import palette from "../theme/palette"
 
 export default function IndexPage({}: PageProps) {
   return (
@@ -34,10 +35,16 @@ export default function IndexPage({}: PageProps) {
 }
 
 const PrimaryContent = styled.div`
-  padding: 8px;
+  padding: 12px;
+  background-color: ${palette.primaryContent};
 `
 const SecondaryContent = styled.div`
-  padding: 8px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  gap: 16px;
+  padding: 12px;
+  background-color: ${palette.secondaryContent};
 `
 
 export const Head: HeadFC = () => <title>Curriculum Vitae</title>

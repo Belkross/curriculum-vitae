@@ -1,15 +1,19 @@
 import React from "react"
+import styled from "styled-components"
+import FieldWithIcon from "./field-with-icon"
 
 export default function Hobbies() {
   return (
-    <section>
+    <Container>
       <h2>Centres d’intérêts</h2>
-      <ul>
-        <li>Lecture</li>
-        <li>Sports: badminton, vélo</li>
-        <li>Jeux de sociétés</li>
-        <li>Jeux vidéos</li>
-      </ul>
-    </section>
+      <FieldWithIcon text="Lecture" iconId="mdi:book-open-page-variant" />
+      <FieldWithIcon text="Badminton" iconId="mdi:badminton" />
+      <FieldWithIcon text="Jeux de sociétés" iconId="mdi:dice-multiple" />
+      <FieldWithIcon text="Jeux vidéos" iconId="mdi:controller" />
+    </Container>
   )
 }
+
+const Container = styled.section`
+  width: 100%;
+`

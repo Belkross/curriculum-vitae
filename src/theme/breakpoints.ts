@@ -38,4 +38,4 @@ export const breakpointValues: BreakpointValues = {
   xxl: 1536,
 }
 
-export const breakpoints = new StyledBreakpoints(breakpointValues)
+export default new StyledBreakpoints(breakpointValues)

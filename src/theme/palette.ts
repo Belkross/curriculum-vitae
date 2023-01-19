@@ -3,6 +3,8 @@ import theme from "styled-theming"
 type PaletteObject<Type> = {
   primary: Type
   background: Type
+  primaryContent: Type
+  secondaryContent: Type
   paper: Type
   text: Type
 }
@@ -11,6 +13,8 @@ type CssPalette = PaletteObject<string>
 class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
   primary: theme.ThemeSet
   background: theme.ThemeSet
+  primaryContent: theme.ThemeSet
+  secondaryContent: theme.ThemeSet
   paper: theme.ThemeSet
   text: theme.ThemeSet
 
@@ -23,14 +27,18 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
     }
     this.primary = setStyledTheming("primary")
     this.background = setStyledTheming("background")
+    this.primaryContent = setStyledTheming("primaryContent")
+    this.secondaryContent = setStyledTheming("secondaryContent")
     this.paper = setStyledTheming("paper")
     this.text = setStyledTheming("text")
   }
 }
 
 const darkPalette: CssPalette = {
-  primary: "#0d47a1",
+  primary: "#196a98",
   background: "#0a1929",
+  primaryContent: "#0c2750",
+  secondaryContent: "#04214d",
   paper: "#4072bf",
   text: "rgba(255, 255, 255, 0.85)",
 }
