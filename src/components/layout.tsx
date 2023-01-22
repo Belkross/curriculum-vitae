@@ -33,11 +33,9 @@ const GlobalStyle = createGlobalStyle`
     justify-content: start;
     align-items: center;
     padding: 8px;
+    font-size: 15.5px;
   }
   h1, h2, h3 {
     text-align: center;
-  }
-  p {
-    margin: 0;
   }
 `
