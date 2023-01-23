@@ -7,6 +7,7 @@ type PaletteObject<Type> = {
   secondaryContent: Type
   paper: Type
   text: Type
+  disabled: Type
 }
 type CssPalette = PaletteObject<string>
 
@@ -17,6 +18,7 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
   secondaryContent: theme.ThemeSet
   paper: theme.ThemeSet
   text: theme.ThemeSet
+  disabled: theme.ThemeSet
 
   constructor(darkPalette: CssPalette, lightPalette: CssPalette) {
     const setStyledTheming = (property: keyof StyledThemingPalette) => {
@@ -31,6 +33,7 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
     this.secondaryContent = setStyledTheming("secondaryContent")
     this.paper = setStyledTheming("paper")
     this.text = setStyledTheming("text")
+    this.disabled= setStyledTheming("disabled")
   }
 }
 
@@ -41,6 +44,7 @@ const darkPalette: CssPalette = {
   secondaryContent: "#04214d",
   paper: "#4072bf",
   text: "rgba(255, 255, 255, 0.85)",
+  disabled: "grey",
 }
 
 const lightPalette: CssPalette = {

@@ -22,11 +22,11 @@ export default function IndexPage({}: PageProps) {
           <ProfileDescription />
           <Experience />
           <Skills />
-          <Education />
         </PrimaryContent>
         <SecondaryContent>
           <PhotoWideScreen />
           <PersonalInformations />
+          <Education />
           <Hobbies />
         </SecondaryContent>
       </Layout>

@@ -22,7 +22,7 @@ export default function ProjectExperience(props: ProjectExperienceProps) {
       <Title>{props.title[lang]}</Title>
       <P>{props.description[lang]}</P>
       <P>{`${content.features[lang]}: ${props.features[lang]}`}</P>
-      {/* <P>{`${content.builtWith[lang]}: ${props.builtWith[lang]}`}</P> */}
+      <P>{`${content.builtWith[lang]}: ${props.builtWith[lang]}`}</P>
     </article>
   )
 }

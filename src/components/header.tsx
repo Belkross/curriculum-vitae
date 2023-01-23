@@ -1,7 +1,8 @@
 import React from "react"
+import styled from "styled-components"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
 import { PageContent } from "../types"
-import ButtonLanguage from "./button-language"
+import SwitchLanguage from "./switch-language"
 import ButtonThemeMode from "./button-theme-mode"
 import Photo from "./photo"
 import { useLanguage } from "./provider-language"
@@ -19,11 +20,20 @@ export default function Header() {
   const lang = useLanguage()
   return (
     <header>
-      <ButtonThemeMode />
-      <ButtonLanguage />
+      <GroupedButtons>
+        <ButtonThemeMode />
+        <SwitchLanguage />
+      </GroupedButtons>
       <Photo />
       <h1>{content.title[lang]}</h1>
       <h2>{content.subtitle[lang]}</h2>
     </header>
   )
 }
+
+const GroupedButtons = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 8px;
+  align-items: center;
+`

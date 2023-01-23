@@ -6,7 +6,7 @@ const defaultLanguage: LanguageValue = "fr"
 const LanguageContext = createContext<LanguageValue>(defaultLanguage)
 export const useLanguage = () => useContext(LanguageContext)
 
-export const ToggleLanguageContext = createContext(() => {})
+export const ToggleLanguageContext = createContext((Language: LanguageValue) => {})
 
 type Props = {
   children: ReactElement
@@ -15,9 +15,8 @@ type Props = {
 export default function ProviderLanguage({ children }: Props) {
   const [language, setLanguage] = useState(defaultLanguage)
 
-  const toggleLanguage = () => {
-    const newLanguage: LanguageValue = language === "fr" ? "en" : "fr"
-    setLanguage(newLanguage)
+  const toggleLanguage = (language: LanguageValue) => {
+    setLanguage(language)
   }
 
   return (

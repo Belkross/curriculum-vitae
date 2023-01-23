@@ -31,7 +31,7 @@ class StyledBreakpoints implements Breakpoints<string> {
 
 export const breakpointValues: BreakpointValues = {
   xs: 350,
-  sm: 640,
+  sm: 540,
   md: 768,
   lg: 1024,
   xl: 1280,

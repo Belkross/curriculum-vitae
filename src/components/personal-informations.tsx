@@ -16,6 +16,7 @@ export default function PersonalInformations({}: Props) {
       <FieldWithIcon text={content.age[lang]} iconId="mdi:face-man" />
       <Address>
         <FieldWithIcon text={content.town[lang]} iconId="mdi:city-variant" />
+        <FieldWithIcon text={content.driverLicense[lang]} iconId="mdi:car" />
         <FieldWithIcon text={content.phone[lang]} iconId="mdi:phone" />
         <FieldWithIcon text={content.mail[lang]} iconId="mdi:mail" />
         <FieldWithIcon text={content.github[lang]} iconId="mdi:github" />
@@ -45,6 +46,9 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
   },
   town: {
     fr: "Besançon, France",
+  },
+  driverLicense: {
+    fr: "Permis B",
   },
   mail: {
     fr: "belkross.pro@gmail.com",

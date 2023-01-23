@@ -9,7 +9,7 @@ export default function Experience() {
 
   return (
     <section>
-      <h2>Expérience</h2>
+      <h2>Réalisations</h2>
       {experiences}
     </section>
   )
@@ -55,7 +55,7 @@ const content: ProjectExperienceProps[] = [
       fr: "multilangue, diagnostic Lighthouse 95/100 de moyenne, dark mode, design moderne et responsive.",
     },
     builtWith: {
-      fr: "React, Gatsby, DatoCMS, Mui, Netlify.",
+      fr: "React, Gatsby, GraphQL, DatoCMS, Mui, Netlify.",
     },
   }) as ProjectExperienceProps,
 ]
