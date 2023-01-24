@@ -2,6 +2,7 @@ import { Icon } from "@iconify/react"
 import React from "react"
 import styled from "styled-components"
 import palette from "../theme/palette"
+import shadow from "../theme/shadow"
 import shapes from "../theme/shapes"
 
 type Props = {
@@ -34,6 +35,7 @@ const IconButtonStyled = styled.button`
   border-style: solid;
   border-color: ${palette.paper};
   border-radius: ${shapes.borderRadius};
+  box-shadow: ${shadow[2]};
   :hover {
     background-color: ${palette.primary};
   }

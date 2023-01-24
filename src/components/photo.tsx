@@ -1,6 +1,7 @@
 import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
 import { breakpointValues } from "../theme/breakpoints"
+import shadow from "../theme/shadow"
 import useScreenSize from "./custom-hooks/use-screen-size"
 
 export default function Photo() {
@@ -21,6 +22,7 @@ const style_image = (screenWidth: number) => {
     width: size,
     height: size,
     borderRadius: "40px",
+    boxShadow: shadow[9],
     display,
   }
 }

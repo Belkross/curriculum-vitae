@@ -39,6 +39,7 @@ export default function Skills() {
 }
 
 const GroupedSkills = styled.div`
+  margin: auto 12px;
   ${breakpoints.sm} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

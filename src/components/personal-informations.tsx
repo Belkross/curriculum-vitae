@@ -5,13 +5,11 @@ import { PageContent } from "../types"
 import FieldWithIcon from "./field-with-icon"
 import { useLanguage } from "./provider-language"
 
-type Props = {}
-
-export default function PersonalInformations({}: Props) {
+export default function PersonalInformations() {
   const lang = useLanguage()
   return (
     <Container>
-      <h2>Informations personnelles</h2>
+      <h2>Informations</h2>
 
       <FieldWithIcon text={content.age[lang]} iconId="mdi:face-man" />
       <Address>
