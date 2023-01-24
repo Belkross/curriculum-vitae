@@ -1,6 +1,6 @@
+import { Icon } from "@iconify/react"
 import React from "react"
 import styled from "styled-components"
-import IconButton from "./icon-button"
 
 type Props = {
   iconId: string
@@ -10,12 +10,7 @@ type Props = {
 export default function FieldWithIcon({ iconId, text }: Props) {
   return (
     <Container>
-      <IconButton
-        iconId={iconId}
-        onClick={() => {
-          console.log(text)
-        }}
-      />
+      <Icon icon={iconId} width="28px" height="28px" style={style_icon} />
       <Typography>{text}</Typography>
     </Container>
   )
@@ -30,6 +25,10 @@ const Container = styled.div`
   margin-bottom: 8px;
   width: 100%;
 `
+
+const style_icon = {
+  flexShrink: 0,
+}
 
 const Typography = styled.p`
   font-style: normal;
