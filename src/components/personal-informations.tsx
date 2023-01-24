@@ -62,8 +62,10 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
   },
   french: {
     fr: "Français: langue maternelle",
+    en: "French: mother tongue",
   },
   english: {
     fr: "Anglais: très bon niveau oral et écrit",
+    en: "English: fluent",
   },
 })

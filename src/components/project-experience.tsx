@@ -53,4 +53,5 @@ const Span = styled.span`
 
 const BuiltWith = styled(P)`
   font-size: 0.9em;
+  font-style: italic;
 `

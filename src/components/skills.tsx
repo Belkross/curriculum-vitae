@@ -1,13 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 import breakpoints from "../theme/breakpoints"
+import { PageContent } from "../types"
+import { useLanguage } from "./provider-language"
 import SkillWithIcon from "./skill-with-icon"
 
 export default function Skills() {
+  const lang = useLanguage()
+
   return (
     <section>
-      <h2>Compétences</h2>
-      <H3>Langages et framework</H3>
+      <h2>{content.sectionTitle[lang]}</h2>
+      <H3>{content.subtitle1[lang]}</H3>
       <GroupedSkills>
         <div>
           <SkillWithIcon iconId="skill-icons:typescript" text="Typescript" />
@@ -26,16 +30,43 @@ export default function Skills() {
           <SkillWithIcon iconId="skill-icons:styledcomponents" text="Styled components" />
         </div>
       </GroupedSkills>
-      <H3>Compétences générales</H3>
+      <H3>{content.subtitle2[lang]}</H3>
       <GroupedSkills>
-        <SkillWithIcon iconId="skill-icons:git" text="Versioning Git" />
+        <SkillWithIcon iconId="skill-icons:git" text={content.git[lang]} />
         <SkillWithIcon iconId="fa-solid:keyboard" text="Clean code" />
-        <SkillWithIcon iconId="charm:organisation" text="Programmation modulaire" />
-        <SkillWithIcon iconId="eos-icons:cleanup" text="Refactorisation" />
-        <SkillWithIcon iconId="mdi:shield-tick" text="Test (en cours de formation)" />
+        <SkillWithIcon iconId="charm:organisation" text={content.modular[lang]} />
+        <SkillWithIcon iconId="eos-icons:cleanup" text="Refactoring" />
+        <SkillWithIcon iconId="mdi:shield-tick" text={content.testing[lang]} />
       </GroupedSkills>
     </section>
   )
+}
+
+const content: PageContent = {
+  sectionTitle: {
+    fr: "Compétences",
+    en: "Skills",
+  },
+  subtitle1: {
+    fr: "Langages and frameworks",
+    en: "Languages and frameworks",
+  },
+  subtitle2: {
+    fr: "Compétences dev générales",
+    en: "General dev skills",
+  },
+  git: {
+    fr: "Versioning Git",
+    en: "Git versioning",
+  },
+  modular: {
+    fr: "Programmation modulaire",
+    en: "Modular programming",
+  },
+  testing: {
+    fr: "Tests (en cours de formation)",
+    en: "Testing (currently learning)",
+  },
 }
 
 const GroupedSkills = styled.div`
