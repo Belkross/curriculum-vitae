@@ -15,6 +15,8 @@ export default function SwitchLanguage() {
 }
 
 const Container = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
   background-color: ${palette.primary};
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};

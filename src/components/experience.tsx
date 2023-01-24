@@ -21,7 +21,7 @@ const content: ProjectExperienceProps[] = [
       fr: "Ricochet",
     },
     type: {
-      fr: "Single-page application:"
+      fr: "Single-page application:",
     },
     description: {
       fr: " une reproduction online d’un jeu de société existant et créé par Cyril Blondel. L’application permet à plusieurs personnes de jouer en même temps sur la même partie.",
@@ -38,7 +38,7 @@ const content: ProjectExperienceProps[] = [
       fr: "Esquive",
     },
     type: {
-      fr: "Single-page application:"
+      fr: "Single-page application:",
     },
     description: {
       fr: " un jeu de société créé par moi-même. L’application permet à n’importe qui de créer un salon de jeu et d’y inviter qui il souhaite.",
@@ -55,7 +55,7 @@ const content: ProjectExperienceProps[] = [
       fr: "Scootin",
     },
     type: {
-      fr: "Site vitrine statique:"
+      fr: "Site vitrine:",
     },
     description: {
       fr: " Un site commercial pensé pour une compagnie de location de scooter fictive. Tout le contenu du site est connecté à un CMS et éditable par des non développeurs. Une attention particulière a été mise sur les performances d’affichage, le SEO et l’accessibilité.",

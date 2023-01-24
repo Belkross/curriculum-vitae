@@ -7,7 +7,7 @@ export default function Skills() {
   return (
     <section>
       <h2>Compétences</h2>
-      <h3>Langages et framework</h3>
+      <H3>Langages et framework</H3>
       <GroupedSkills>
         <div>
           <SkillWithIcon iconId="skill-icons:typescript" text="Typescript" />
@@ -26,7 +26,7 @@ export default function Skills() {
           <SkillWithIcon iconId="skill-icons:styledcomponents" text="Styled components" />
         </div>
       </GroupedSkills>
-      <h3>Compétences générales</h3>
+      <H3>Compétences générales</H3>
       <GroupedSkills>
         <SkillWithIcon iconId="skill-icons:git" text="Versioning Git" />
         <SkillWithIcon iconId="fa-solid:keyboard" text="Clean code" />
@@ -40,12 +40,15 @@ export default function Skills() {
 
 const GroupedSkills = styled.div`
   margin: auto 12px;
-  ${breakpoints.sm} {
+  ${breakpoints.xs} {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
   }
-  ${breakpoints.md} {
+  ${breakpoints.sm} {
     grid-template-columns: repeat(3, 1fr);
   }
+`
+const H3 = styled.h3`
+  margin-bottom: 20px;
 `

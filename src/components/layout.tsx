@@ -36,8 +36,12 @@ const GlobalStyle = createGlobalStyle`
     flex-flow: column nowrap;
     justify-content: start;
     align-items: center;
-    padding: 8px;
+    margin: 0;
+    padding: 0px;
     font-size: 15px;
+    ${breakpoints.lg} {
+      margin: 1cm;
+    }
   }
   h1, h2, h3 {
     text-align: center;

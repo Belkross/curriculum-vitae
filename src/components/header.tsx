@@ -7,6 +7,9 @@ import ButtonThemeMode from "./button-theme-mode"
 import Photo from "./photo"
 import { useLanguage } from "./provider-language"
 import palette from "../theme/palette"
+import breakpoints from "../theme/breakpoints"
+import shapes from "../theme/shapes"
+import shadow from "../theme/shadow"
 
 const content: PageContent = fullfillNonDefaultLanguageFields({
   title: {
@@ -25,26 +28,38 @@ export default function Header() {
         <ButtonThemeMode />
         <SwitchLanguage />
       </GroupedButtons>
-      <Photo />
       <GroupedTitles>
         <H1>{content.title[lang]}</H1>
         <H2>{content.subtitle[lang]}</H2>
       </GroupedTitles>
+      <Photo />
     </Container>
   )
 }
 
 const Container = styled.header`
   display: flex;
-  flex-flow: row-reverse nowrap;
+  flex-flow: column nowrap;
   justify-content: stretch;
-  align-items: flex-start;
+  align-items: center;
+  gap: 16px;
+  background-color: ${palette.secondaryContent};
+  padding: 16px;
+  border-radius: ${shapes.borderRadius};
+  box-shadow: ${shadow[2]};
+  ${breakpoints.md} {
+    flex-flow: row-reverse nowrap;
+    justify-content: stretch;
+  }
 `
 const GroupedButtons = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  gap: 8px;
   align-items: center;
+  gap: 8px;
+  ${breakpoints.md} {
+    align-self: flex-start;
+  }
 `
 
 const GroupedTitles = styled.div`

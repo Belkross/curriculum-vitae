@@ -54,7 +54,7 @@ const darkPalette: CssPalette = {
   text: "rgba(255, 255, 255, 0.85)",
   disabled: "grey",
   h2: "#67AC1C",
-  h3: "#EF6A05",
+  h3: "#E46606",
 }
 
 const lightPalette: CssPalette = {

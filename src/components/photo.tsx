@@ -16,13 +16,13 @@ export default function Photo() {
 
 const style_image = (screenWidth: number) => {
   const display = screenWidth >= breakpointValues.lg ? "none" : "flex"
-  const size = "200px"
+  const size = "180px"
   return {
     margin: "auto",
     width: size,
     height: size,
-    borderRadius: "40px",
-    boxShadow: shadow[9],
+    borderRadius: "6px",
+    boxShadow: shadow[2],
     display,
   }
 }

@@ -22,7 +22,7 @@ const style_image = (screenWidth: number) => {
     width: "100%",
     height: size,
     borderRadius: "6px",
-    boxShadow: shadow[3],
+    boxShadow: shadow[2],
     display,
     border: `6px solid ${palette.primary}`,
   }
