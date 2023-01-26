@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
 import SwitchLanguage from "./switch-language"
 import ButtonThemeMode from "./button-theme-mode"
 import Photo from "./photo"
@@ -33,7 +33,7 @@ export default function Header() {
         <H1>{content.title[lang]}</H1>
         <H2>{content.subtitle[lang]}</H2>
       </GroupedTitles>
-      <Photo />
+      <Photo primaryContent={true}/>
     </Container>
   )
 }
@@ -48,7 +48,7 @@ const Container = styled.header`
   padding: 16px;
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
-  ${breakpoints.md} {
+  ${breakpoints.sm} {
     flex-flow: row-reverse nowrap;
     justify-content: stretch;
   }
@@ -58,7 +58,7 @@ const GroupedButtons = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   gap: 8px;
-  ${breakpoints.md} {
+  ${breakpoints.sm} {
     align-self: flex-start;
   }
 `

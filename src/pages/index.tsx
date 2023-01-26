@@ -9,12 +9,12 @@ import Education from "../components/education"
 import Experience from "../components/experience"
 import Hobbies from "../components/hobbies"
 import Header from "../components/header"
-import PhotoWideScreen from "../components/photo-wide-screen"
 import styled from "styled-components"
 import palette from "../theme/palette"
 import shapes from "../theme/shapes"
 import shadow from "../theme/shadow"
 import breakpoints from "../theme/breakpoints"
+import Photo from "../components/photo"
 
 export default function IndexPage({}: PageProps) {
   return (
@@ -28,7 +28,7 @@ export default function IndexPage({}: PageProps) {
           <Skills />
         </PrimaryContent>
         <SecondaryContent>
-          <PhotoWideScreen />
+          <Photo primaryContent={false}/>
           <PersonalInformations />
           <Education />
           <Hobbies />

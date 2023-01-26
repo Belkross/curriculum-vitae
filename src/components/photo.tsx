@@ -1,28 +1,43 @@
-import { StaticImage } from "gatsby-plugin-image"
 import React from "react"
-import { breakpointValues } from "../theme/breakpoints"
+import styled from "styled-components"
+import breakpoints from "../theme/breakpoints"
 import shadow from "../theme/shadow"
-import useScreenSize from "./custom-hooks/use-screen-size"
+import image from "../images/photo-pro.jpg"
+import { useLanguage } from "./provider-language"
+import { PageContent } from "../types/types"
+import shapes from "../theme/shapes"
 
-export default function Photo() {
-  const screenWidth = useScreenSize().width
-
-  return (
-    <React.Fragment>
-      <StaticImage src="../images/photo-pro.jpg" alt="photo of Truong Huy" style={style_image(screenWidth)} />
-    </React.Fragment>
-  )
+type PhotoProps = {
+  primaryContent: boolean
 }
 
-const style_image = (screenWidth: number) => {
-  const display = screenWidth >= breakpointValues.lg ? "none" : "flex"
-  const size = "180px"
-  return {
-    margin: "auto",
-    width: size,
-    height: size,
-    borderRadius: "6px",
-    boxShadow: shadow[2],
-    display,
+export default function Photo({ primaryContent }: PhotoProps) {
+  const lang = useLanguage()
+
+  return <Img src={image} alt={content.alt[lang]} primaryContent={primaryContent} />
+}
+
+const content: PageContent = {
+  alt: {
+    fr: "photo de Truong Huy",
+    en: "photo of Truong Huy",
+  },
+}
+
+type ImgProps = {
+  primaryContent: boolean
+}
+
+const Img = styled.img<ImgProps>`
+  width: 180px;
+  height: 200px;
+  display: ${(props) => (props.primaryContent ? "flex" : "none")};
+  border-radius: ${shapes.borderRadius};
+  box-shadow: ${shadow[2]};
+  border: 1px solid white;
+  ${breakpoints.lg} {
+    width: 200px;
+    height: 220px;
+    display: ${(props) => (props.primaryContent ? "none" : "flex")};
   }
-}
+`
