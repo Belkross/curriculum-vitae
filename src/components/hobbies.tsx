@@ -28,7 +28,7 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
     en: "Cooperatives board games",
   },
   badminton: {
-    fr: "Badminton. Entraîneur ayant érigé une école de jeune labélisée 4/5 étoiles",
+    fr: "Badminton. Entraîneur ayant érigé une école de jeunes labélisée 4/5 étoiles",
     en: "Badminton. Founder of 4/5 star school",
   },
   videoGames: {
