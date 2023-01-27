@@ -2,7 +2,7 @@ import React from "react"
 import type { HeadFC, PageProps } from "gatsby"
 import ProfileDescription from "../components/profile-description"
 import Skills from "../components/skills"
-import PersonalInformations from "../components/personal-informations"
+import Informations from "../components/informations"
 import Layout from "../components/layout"
 import GlobalFeatures from "../components/global-features"
 import Education from "../components/education"
@@ -29,7 +29,7 @@ export default function IndexPage({}: PageProps) {
         </PrimaryContent>
         <SecondaryContent>
           <Photo primaryContent={false}/>
-          <PersonalInformations />
+          <Informations />
           <Education />
           <Hobbies />
         </SecondaryContent>
