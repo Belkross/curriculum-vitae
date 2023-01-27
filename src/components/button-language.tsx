@@ -34,4 +34,7 @@ const Button = styled.button<ButtonProps>`
   font-size: 17px;
   font-weight: 600;
   border: 1px solid ${palette.primary};
+  :hover {
+    background-color: ${(props) => (props.isActive ? "inherit" : palette.secondaryContent)};
+  }
 `

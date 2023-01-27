@@ -31,12 +31,12 @@ const IconButtonStyled = styled.button`
   width: 35px;
   height: 35px;
   padding: 0;
-  border-width: 0px;
+  border-width: 1px;
   border-style: solid;
-  border-color: ${palette.paper};
+  border-color: ${palette.primary};
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
   :hover {
-    background-color: ${palette.primary};
+    background-color: inherit;
   }
 `
