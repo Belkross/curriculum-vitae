@@ -3,6 +3,7 @@ import styled from "styled-components"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
 import { PageContent } from "../types/types"
 import FieldWithIcon from "./field-with-icon"
+import LinkWithIconButton from "./link-with-icon-button"
 import { useLanguage } from "./provider-language"
 
 export default function Informations() {
@@ -17,8 +18,8 @@ export default function Informations() {
         <FieldWithIcon text={content.driverLicense[lang]} iconId="mdi:car" />
         <FieldWithIcon text={content.phone[lang]} iconId="mdi:phone" />
         <FieldWithIcon text={content.mail[lang]} iconId="mdi:mail" />
-        <FieldWithIcon text={content.github[lang]} iconId="mdi:github" />
-        <FieldWithIcon text={content.linkedin[lang]} iconId="mdi:linkedin" />
+        <LinkWithIconButton iconId="mdi:github" href={content.github[lang]} anchor={content.github[lang]} />
+        <LinkWithIconButton iconId="mdi:linkedin" href={content.linkedin[lang]} anchor={content.linkedin[lang]} />
       </Address>
 
       <article>
@@ -58,7 +59,7 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
     fr: "github.com/Belkross",
   },
   linkedin: {
-    fr: "linkedin.com/Belkross",
+    fr: "linkedin.com/in/belkross",
   },
   french: {
     fr: "Français: langue maternelle",

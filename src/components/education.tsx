@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
 import FieldWithIcon from "./field-with-icon"
 import { useLanguage } from "./provider-language"
 
@@ -27,5 +27,6 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
 })
 
 const Container = styled.section`
+  width: 100%;
   text-align: left;
 `

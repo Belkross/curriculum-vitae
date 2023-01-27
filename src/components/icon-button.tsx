@@ -7,15 +7,24 @@ import shapes from "../theme/shapes"
 
 type Props = {
   iconId: string
-  onClick: () => void
   disabled?: boolean | undefined
+  onClick: () => void
+  onMouseEnter?: () => void
+  onMouseLeave?: () => void
 }
 
-export default function IconButton({ iconId, onClick, disabled }: Props) {
+export default function IconButton({ iconId, disabled, onClick, onMouseEnter, onMouseLeave }: Props) {
   const handleClick = () => onClick()
+  const handleMouseEnter = () => (onMouseEnter === undefined ? () => {} : onMouseEnter())
+  const handleMouseLeave = () => (onMouseLeave === undefined ? () => {} : onMouseLeave())
 
   return (
-    <IconButtonStyled onClick={handleClick} disabled={disabled === undefined ? false : disabled}>
+    <IconButtonStyled
+      disabled={disabled === undefined ? false : disabled}
+      onClick={handleClick}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       <Icon icon={iconId} width="25" />
     </IconButtonStyled>
   )

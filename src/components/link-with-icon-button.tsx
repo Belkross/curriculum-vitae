@@ -1,0 +1,47 @@
+import React, { useState } from "react"
+import styled from "styled-components"
+import IconButton from "./icon-button"
+
+type Props = {
+  iconId: string
+  anchor: string
+  href: string
+}
+
+export default function LinkWithIconButton({ iconId, anchor, href }: Props) {
+  const [mouseOverButton, setMouseOverButton] = useState(false)
+
+  const toggleMouseOverState = () => setMouseOverButton((prevState) => !prevState)
+  const handleClick = () => window.open(`https://${href}`, "_blank")
+
+  return (
+    <Container>
+      <IconButton
+        iconId={iconId}
+        onClick={handleClick}
+        onMouseEnter={toggleMouseOverState}
+        onMouseLeave={toggleMouseOverState}
+      />
+      <A href={href} mouseOverButton={mouseOverButton}>
+        {anchor}
+      </A>
+    </Container>
+  )
+}
+
+const Container = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  width: 100%;
+`
+type AnchorProps = {
+  mouseOverButton: boolean
+}
+
+const A = styled.a<AnchorProps>`
+  text-decoration: ${(props) => (props.mouseOverButton ? "underline" : "inherit")};
+`

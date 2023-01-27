@@ -49,6 +49,7 @@ const PrimaryContent = styled.div`
 const SecondaryContent = styled.div`
   display: flex;
   flex-flow: column nowrap;
+  align-items: center;
   gap: 16px;
   padding: 20px;
   box-shadow: ${shadow[6]};

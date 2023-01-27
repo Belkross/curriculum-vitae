@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 import palette from "../theme/palette"
 import { PageContent } from "../types/types"
-import IconButton from "./icon-button"
 import { useLanguage } from "./provider-language"
 
 type MultiLangField = {
