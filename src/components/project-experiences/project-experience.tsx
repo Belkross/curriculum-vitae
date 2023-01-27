@@ -1,17 +1,13 @@
 import React from "react"
 import styled from "styled-components"
-import palette from "../theme/palette"
-import { PageContent } from "../types/types"
-import { useLanguage } from "./provider-language"
-
-type MultiLangField = {
-  fr: string
-  en: string
-}
+import palette from "../../theme/palette"
+import { MultiLangField, PageContent } from "../../types/types"
+import { useLanguage } from "../provider-language"
+import Title from "./title"
 
 export type ProjectExperienceProps = {
   title: MultiLangField
-  type: MultiLangField
+  projectType: MultiLangField
   description: MultiLangField
   features: MultiLangField
   builtWith: MultiLangField
@@ -20,15 +16,12 @@ export type ProjectExperienceProps = {
 
 export default function ProjectExperience(props: ProjectExperienceProps) {
   const lang = useLanguage()
+
   return (
     <article>
-      <h3>
-        <a href={props.url[lang]} target="_blank">
-          {props.title[lang]}
-        </a>
-      </h3>
+      <Title {...props} />
       <P>
-        <Span>{props.type[lang]}</Span>
+        <Span>{props.projectType[lang]}</Span>
         {props.description[lang]}
       </P>
       <P>{`${content.features[lang]}: ${props.features[lang]}`}</P>
@@ -59,4 +52,5 @@ const Span = styled.span`
 const BuiltWith = styled(P)`
   font-size: 0.9em;
   font-style: italic;
+  margin-bottom: 32px;
 `

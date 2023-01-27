@@ -1,7 +1,7 @@
 import React from "react"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
 import { PageContent } from "../types/types"
-import ProjectExperience, { ProjectExperienceProps } from "./project-experience"
+import ProjectExperience, { ProjectExperienceProps } from "./project-experiences/project-experience"
 import { useLanguage } from "./provider-language"
 
 export default function Experience() {
@@ -31,7 +31,7 @@ const experiencesContent: ProjectExperienceProps[] = [
     title: {
       fr: "Ricochet",
     },
-    type: {
+    projectType: {
       fr: "Single-page application: ",
     },
     description: {
@@ -53,7 +53,7 @@ const experiencesContent: ProjectExperienceProps[] = [
     title: {
       fr: "Esquive",
     },
-    type: {
+    projectType: {
       fr: "Single-page application: ",
     },
     description: {
@@ -75,7 +75,7 @@ const experiencesContent: ProjectExperienceProps[] = [
     title: {
       fr: "Scootin",
     },
-    type: {
+    projectType: {
       fr: "Site vitrine: ",
       en: "Presentation website: ",
     },

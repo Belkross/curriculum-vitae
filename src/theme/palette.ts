@@ -2,6 +2,7 @@ import theme from "styled-theming"
 
 type PaletteObject<Type> = {
   primary: Type
+  secondary: Type
   background: Type
   primaryContent: Type
   secondaryContent: Type
@@ -15,6 +16,7 @@ type CssPalette = PaletteObject<string>
 
 class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
   primary: theme.ThemeSet
+  secondary: theme.ThemeSet
   background: theme.ThemeSet
   primaryContent: theme.ThemeSet
   secondaryContent: theme.ThemeSet
@@ -40,13 +42,13 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
     this.disabled = setStyledTheming("disabled")
     this.h3 = setStyledTheming("h3")
     this.h2 = setStyledTheming("h2")
+    this.secondary = setStyledTheming("secondary")
   }
 }
 
 const darkPalette: CssPalette = {
-  //primary: "#df6202", //orange
-  //primary: "#D02727", //red
   primary: "#54930E",
+  secondary: "#E46606",
   background: "#263238",
   primaryContent: "#062340",
   secondaryContent: "#133551",
@@ -60,6 +62,7 @@ const darkPalette: CssPalette = {
 const lightPalette: CssPalette = {
   ...darkPalette,
   primary: "#51a654",
+  secondary: "#DB6132",
   background: "#b7c1c7",
   primaryContent: "#d9e3f0",
   secondaryContent: "#b9c7d9",
