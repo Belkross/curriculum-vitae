@@ -59,4 +59,14 @@ const GlobalStyle = createGlobalStyle`
     text-align: left;
     margin: 12px 0px;
   }
+
+  a {
+    text-decoration: none;
+    :hover {
+      text-decoration: underline;
+    }
+    :visited {
+      color: inherit;
+    }
+  }
 `

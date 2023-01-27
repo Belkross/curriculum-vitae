@@ -1,6 +1,6 @@
 import React from "react"
 import fullfillNonDefaultLanguageFields from "../functions/fulfill-non-default-language-fields"
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
 import ProjectExperience, { ProjectExperienceProps } from "./project-experience"
 import { useLanguage } from "./provider-language"
 
@@ -45,6 +45,9 @@ const experiencesContent: ProjectExperienceProps[] = [
     builtWith: {
       fr: "Typescript, React, Express, Mongodb, Socket.io, Mui, Render, Netlify",
     },
+    url: {
+      fr: "https://ricochet.belkross.com",
+    },
   }) as ProjectExperienceProps,
   fullfillNonDefaultLanguageFields({
     title: {
@@ -63,6 +66,9 @@ const experiencesContent: ProjectExperienceProps[] = [
     },
     builtWith: {
       fr: "Typescript, React, Express, Socket.io, Mui, Heroku, Netlify.",
+    },
+    url: {
+      fr: "https://www.esquive.belkross.com",
     },
   }) as ProjectExperienceProps,
   fullfillNonDefaultLanguageFields({
@@ -83,6 +89,9 @@ const experiencesContent: ProjectExperienceProps[] = [
     },
     builtWith: {
       fr: "React, Gatsby, GraphQL, DatoCMS, Mui, Netlify.",
+    },
+    url: {
+      fr: "https://scootin.belkross.com",
     },
   }) as ProjectExperienceProps,
 ]

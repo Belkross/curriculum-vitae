@@ -1,7 +1,8 @@
 import React from "react"
 import styled from "styled-components"
 import palette from "../theme/palette"
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
+import IconButton from "./icon-button"
 import { useLanguage } from "./provider-language"
 
 type MultiLangField = {
@@ -15,13 +16,18 @@ export type ProjectExperienceProps = {
   description: MultiLangField
   features: MultiLangField
   builtWith: MultiLangField
+  url: MultiLangField
 }
 
 export default function ProjectExperience(props: ProjectExperienceProps) {
   const lang = useLanguage()
   return (
     <article>
-      <h3>{props.title[lang]}</h3>
+      <h3>
+        <a href={props.url[lang]} target="_blank">
+          {props.title[lang]}
+        </a>
+      </h3>
       <P>
         <Span>{props.type[lang]}</Span>
         {props.description[lang]}
