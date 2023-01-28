@@ -35,6 +35,10 @@ const Img = styled.img<ImgProps>`
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
   border: 1px solid white;
+  ${breakpoints.sm} {
+    width: 140px;
+    height: 155px;
+  }
   ${breakpoints.lg} {
     width: 200px;
     height: 220px;

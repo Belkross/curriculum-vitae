@@ -10,6 +10,7 @@ import palette from "../theme/palette"
 import breakpoints from "../theme/breakpoints"
 import shapes from "../theme/shapes"
 import shadow from "../theme/shadow"
+import ButtonDownloadPdf from "./button-download-pdf"
 
 const content: PageContent = fullfillNonDefaultLanguageFields({
   title: {
@@ -26,14 +27,17 @@ export default function Header() {
   return (
     <Container>
       <GroupedButtons>
-        <ButtonThemeMode />
-        <SwitchLanguage />
+        <FirstGroupedButtons>
+          <ButtonThemeMode />
+          <SwitchLanguage />
+        </FirstGroupedButtons>
+        <ButtonDownloadPdf />
       </GroupedButtons>
       <GroupedTitles>
         <H1>{content.title[lang]}</H1>
         <H2>{content.subtitle[lang]}</H2>
       </GroupedTitles>
-      <Photo primaryContent={true}/>
+      <Photo primaryContent={true} />
     </Container>
   )
 }
@@ -59,8 +63,17 @@ const GroupedButtons = styled.div`
   align-items: center;
   gap: 8px;
   ${breakpoints.sm} {
-    align-self: flex-start;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    align-self: center;
   }
+`
+
+const FirstGroupedButtons = styled.div`
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 8px;
 `
 
 const GroupedTitles = styled.div`
