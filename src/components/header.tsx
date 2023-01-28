@@ -16,8 +16,8 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
     fr: "TRUONG Huy",
   },
   subtitle: {
-    fr: "Développeur web frontend",
-    en: "Frontend web developer",
+    fr: "Développeur web front-end React",
+    en: "React front-end web developer",
   },
 })
 
