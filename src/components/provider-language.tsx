@@ -1,4 +1,5 @@
 import React, { createContext, useContext, ReactElement, useState } from "react"
+import { doNothingWith } from "../functions/do-nothing"
 
 export type LanguageValue = "fr" | "en"
 const defaultLanguage: LanguageValue = "fr"
@@ -6,7 +7,7 @@ const defaultLanguage: LanguageValue = "fr"
 const LanguageContext = createContext<LanguageValue>(defaultLanguage)
 export const useLanguage = () => useContext(LanguageContext)
 
-export const ToggleLanguageContext = createContext((Language: LanguageValue) => {})
+export const ToggleLanguageContext = createContext((language: LanguageValue) => doNothingWith(language))
 
 type Props = {
   children: ReactElement

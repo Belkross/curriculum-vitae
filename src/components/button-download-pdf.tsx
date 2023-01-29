@@ -16,19 +16,19 @@ export default function ButtonDownloadPdf() {
 }
 
 const Anchor = styled.a`
-  display: flex;
-  flex-flow: row nowrap;
   align-items: center;
-  gap: 2px;
-  height: 34px;
-  width: 70px;
-  font-size: 17px;
-  padding: 0 4px;
   background-color: ${palette.primary};
   border: 1px solid ${palette.primary};
   border-radius: ${shapes.borderRadius};
-  box-sizing: border-box;
   box-shadow: ${shadow[2]};
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 17px;
+  gap: 2px;
+  height: 34px;
+  padding: 0 4px;
+  width: 70px;
   :hover {
     background-color: ${palette.secondaryContent};
     text-decoration: none;

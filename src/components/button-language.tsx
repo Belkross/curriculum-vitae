@@ -25,15 +25,15 @@ type ButtonProps = {
 }
 
 const Button = styled.button<ButtonProps>`
-  border: none;
-  width: 35px;
-  height: 35px;
   background-color: ${(props) => (props.isActive ? palette.primary : palette.primaryContent)};
-  color: ${palette.text};
+  border: 1px solid ${palette.primary};
+  border: none;
   border-radius: ${shapes.borderRadius};
+  color: ${palette.text};
   font-size: 17px;
   font-weight: 600;
-  border: 1px solid ${palette.primary};
+  height: 35px;
+  width: 35px;
   :hover {
     background-color: ${(props) => (props.isActive ? "inherit" : palette.secondaryContent)};
   }

@@ -27,6 +27,6 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
 })
 
 const Container = styled.section`
-  width: 100%;
   text-align: left;
+  width: 100%;
 `

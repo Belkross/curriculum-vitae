@@ -29,19 +29,19 @@ type ImgProps = {
 }
 
 const Img = styled.img<ImgProps>`
-  width: 180px;
-  height: 200px;
-  display: ${(props) => (props.primaryContent ? "flex" : "none")};
+  border: 1px solid white;
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
-  border: 1px solid white;
+  display: ${(props) => (props.primaryContent ? "flex" : "none")};
+  height: 200px;
+  width: 180px;
   ${breakpoints.sm} {
-    width: 140px;
     height: 155px;
+    width: 140px;
   }
   ${breakpoints.lg} {
-    width: 200px;
-    height: 220px;
     display: ${(props) => (props.primaryContent ? "none" : "flex")};
+    height: 220px;
+    width: 200px;
   }
 `

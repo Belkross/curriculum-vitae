@@ -1,5 +1,5 @@
 import React from "react"
-import type { HeadFC, PageProps } from "gatsby"
+import type { HeadFC } from "gatsby"
 import ProfileDescription from "../components/profile-description"
 import Skills from "../components/skills"
 import Informations from "../components/informations"
@@ -16,7 +16,7 @@ import shadow from "../theme/shadow"
 import breakpoints from "../theme/breakpoints"
 import Photo from "../components/photo"
 
-export default function IndexPage({}: PageProps) {
+export default function IndexPage() {
   return (
     <GlobalFeatures>
       <Layout>
@@ -28,7 +28,7 @@ export default function IndexPage({}: PageProps) {
           <Skills />
         </PrimaryContent>
         <SecondaryContent>
-          <Photo primaryContent={false}/>
+          <Photo primaryContent={false} />
           <Informations />
           <Education />
           <Hobbies />
@@ -39,30 +39,30 @@ export default function IndexPage({}: PageProps) {
 }
 
 const PrimaryContent = styled.div`
-  padding: 16px;
   background-color: ${palette.primaryContent};
   border-radius: ${shapes.borderRadius} 0 0 ${shapes.borderRadius};
+  padding: 16px;
   ${breakpoints.lg} {
     padding: 32px;
   }
 `
 const SecondaryContent = styled.div`
-  display: flex;
-  flex-flow: column nowrap;
   align-items: center;
-  gap: 16px;
-  padding: 20px;
-  box-shadow: ${shadow[6]};
   background-color: ${palette.secondaryContent};
   border-radius: 0 ${shapes.borderRadius} ${shapes.borderRadius} 0;
+  box-shadow: ${shadow[6]};
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  padding: 20px;
   ${breakpoints.sm} {
     padding: 32px;
   }
 `
 const Divider = styled.hr`
   border-color: ${palette.primary};
-  border-width: 3px;
   border-style: solid;
+  border-width: 3px;
   margin: 20px 0;
 `
 export const Head: HeadFC = () => <title>Curriculum Vitae</title>

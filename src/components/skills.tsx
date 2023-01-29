@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import breakpoints from "../theme/breakpoints"
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
 import { useLanguage } from "./provider-language"
 import SkillWithIcon from "./skill-with-icon"
 

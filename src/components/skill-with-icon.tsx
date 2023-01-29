@@ -17,11 +17,11 @@ export default function SkillWithIcon({ iconId, text }: Props) {
 }
 
 const Container = styled.div`
+  align-items: flex-start;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: flex-start;
   gap: 8px;
+  justify-content: flex-start;
   margin-bottom: 8px;
   width: 100%;
 `

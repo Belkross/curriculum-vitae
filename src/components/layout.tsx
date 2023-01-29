@@ -19,9 +19,9 @@ export default function Layout({ children }: Props) {
 }
 
 const Container = styled.div`
-  max-width: 25cm;
-  box-shadow: ${shadow[12]};
   border-radius: ${shapes.borderRadius};
+  box-shadow: ${shadow[12]};
+  max-width: 25cm;
   ${breakpoints.lg} {
     display: flex;
     flex-flow: row nowrap;

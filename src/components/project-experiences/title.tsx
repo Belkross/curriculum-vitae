@@ -30,25 +30,25 @@ export default function Title(props: ProjectExperienceProps) {
 }
 
 const H3 = styled.h3`
-  display: flex;
   align-items: center;
+  border-radius: ${shapes.borderRadius};
+  color: ${palette.h3};
+  display: flex;
   gap: 8px;
   width: 3cm;
-  color: ${palette.h3};
-  border-radius: ${shapes.borderRadius};
   :hover {
     background-color: ${palette.primaryContent};
   }
 `
 
 const StyledIcon = styled(Icon)`
-  width: 25px;
-  height: 25px;
-  color: ${palette.text};
   background-color: ${palette.secondary};
-  border-radius: ${shapes.borderRadius};
   border: 1px solid ${palette.secondary};
+  border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
+  color: ${palette.text};
+  height: 25px;
+  width: 25px;
   :hover {
     background-color: ${palette.primaryContent};
   }

@@ -1,11 +1,11 @@
-import { PageContent } from "../types"
+import { PageContent } from "../types/types"
 
 export default function fullfillNonDefaultLanguageFields(content: {
   [info: string]: { fr: string; en?: string }
 }): PageContent {
   const output = { ...content }
 
-  for (let property in output) {
+  for (const property in output) {
     if (output[property]["en"] === undefined) output[property]["en"] = output[property]["fr"]
   }
 

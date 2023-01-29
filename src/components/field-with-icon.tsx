@@ -17,11 +17,11 @@ export default function FieldWithIcon({ iconId, text }: Props) {
 }
 
 const Container = styled.div`
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
   gap: 8px;
+  justify-content: flex-start;
   margin-bottom: 8px;
   width: 100%;
 `

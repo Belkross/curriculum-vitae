@@ -43,42 +43,42 @@ export default function Header() {
 }
 
 const Container = styled.header`
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: stretch;
   align-items: center;
-  gap: 16px;
   background-color: ${palette.secondaryContent};
-  padding: 16px;
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+  justify-content: stretch;
+  padding: 16px;
   ${breakpoints.sm} {
     flex-flow: row-reverse nowrap;
     justify-content: stretch;
   }
 `
 const GroupedButtons = styled.div`
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
   gap: 8px;
   ${breakpoints.sm} {
-    flex-flow: column nowrap;
     align-items: flex-end;
     align-self: center;
+    flex-flow: column nowrap;
   }
 `
 
 const FirstGroupedButtons = styled.div`
+  align-items: center;
   display: flex;
   flex-flow: row nowrap;
-  align-items: center;
   gap: 8px;
 `
 
 const GroupedTitles = styled.div`
-  width: "100%";
   flex-grow: 1;
+  width: "100%";
 `
 const H1 = styled.h1`
   margin: 0;
