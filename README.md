@@ -1,6 +1,6 @@
 # Curriculum Vitae
 
-My personal resume. 
+My personal resume.
 
 Live version here: [cv.belkross.com](https://cv.belkross.com)
 
@@ -17,9 +17,8 @@ Lighthouse results:
 
 ## Built with
 
-- Typescript - Javascript language superset
-- React - user interface Javascript library
-- Gatsby - React-based framework for static sites
-- Styled components - styling components and theming
-- Iconify - icons
-- Netlify - hosting
+- [Typescript](https://www.typescriptlang.org/) - Javascript language superset
+- [React](https://en.reactjs.org/) - user interface Javascript library
+- [Gatsby](https://www.gatsbyjs.com/) - React-based framework to build static sites
+- [Styled components](https://styled-components.com/) - styling components and theming
+- [Iconify](https://iconify.design/) - icons
