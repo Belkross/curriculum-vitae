@@ -1,5 +1,4 @@
 import React from "react"
-import type { HeadFC } from "gatsby"
 import ProfileDescription from "../components/profile-description"
 import Skills from "../components/skills"
 import Informations from "../components/informations"
@@ -15,6 +14,7 @@ import shapes from "../theme/shapes"
 import shadow from "../theme/shadow"
 import breakpoints from "../theme/breakpoints"
 import Photo from "../components/photo"
+export { Head } from "../components/head"
 
 export default function IndexPage() {
   return (
@@ -65,4 +65,3 @@ const Divider = styled.hr`
   border-width: 3px;
   margin: 20px 0;
 `
-export const Head: HeadFC = () => <title>Curriculum Vitae</title>
