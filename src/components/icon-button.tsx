@@ -41,7 +41,7 @@ const IconButtonStyled = styled.button`
   border-style: solid;
   border-width: 1px;
   box-shadow: ${shadow[2]};
-  color: ${palette.text};
+  color: ${palette.textButtons};
   display: flex;
   flex-shrink: 0;
   height: 35px;

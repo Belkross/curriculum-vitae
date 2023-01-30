@@ -8,6 +8,7 @@ type PaletteObject<Type> = {
   secondaryContent: Type
   paper: Type
   text: Type
+  textButtons: Type
   disabled: Type
   h2: Type
   h3: Type
@@ -22,6 +23,7 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
   secondaryContent: theme.ThemeSet
   paper: theme.ThemeSet
   text: theme.ThemeSet
+  textButtons: theme.ThemeSet
   disabled: theme.ThemeSet
   h2: theme.ThemeSet
   h3: theme.ThemeSet
@@ -39,6 +41,7 @@ class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
     this.secondaryContent = setStyledTheming("secondaryContent")
     this.paper = setStyledTheming("paper")
     this.text = setStyledTheming("text")
+    this.textButtons = setStyledTheming("textButtons")
     this.disabled = setStyledTheming("disabled")
     this.h3 = setStyledTheming("h3")
     this.h2 = setStyledTheming("h2")
@@ -54,6 +57,7 @@ const darkPalette: CssPalette = {
   secondaryContent: "#133551",
   paper: "#132f4c",
   text: "rgba(255, 255, 255, 0.85)",
+  textButtons: "white",
   disabled: "grey",
   h2: "#67AC1C",
   h3: "#E46606",
@@ -67,8 +71,9 @@ const lightPalette: CssPalette = {
   primaryContent: "#d9e3f0",
   secondaryContent: "#b9c7d9",
   text: "rgba(0, 0, 0, .80)",
+  textButtons: "rgba(0, 0, 0, .80)",
   h2: "#036005",
-  h3: "#b13606"
+  h3: "#b13606",
 }
 
 export default new StyledThemingPalette(darkPalette, lightPalette)

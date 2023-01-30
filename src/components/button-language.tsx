@@ -29,7 +29,7 @@ const Button = styled.button<ButtonProps>`
   border: 1px solid ${palette.primary};
   border: none;
   border-radius: ${shapes.borderRadius};
-  color: ${palette.text};
+  color: ${palette.textButtons};
   font-size: 17px;
   font-weight: 600;
   height: 35px;

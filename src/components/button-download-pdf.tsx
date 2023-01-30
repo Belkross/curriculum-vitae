@@ -22,6 +22,7 @@ const Anchor = styled.a`
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
   box-sizing: border-box;
+  color: ${palette.textButtons};
   display: flex;
   flex-flow: row nowrap;
   font-size: 17px;
