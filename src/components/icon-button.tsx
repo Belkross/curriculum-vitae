@@ -12,9 +12,10 @@ type Props = {
   onClick: () => void
   onMouseEnter?: () => void
   onMouseLeave?: () => void
+  ariaLabel?: string
 }
 
-export default function IconButton({ iconId, disabled, onClick, onMouseEnter, onMouseLeave }: Props) {
+export default function IconButton({ iconId, disabled, onClick, onMouseEnter, onMouseLeave, ariaLabel }: Props) {
   const handleClick = () => onClick()
   const handleMouseEnter = () => (onMouseEnter === undefined ? doNothing() : onMouseEnter())
   const handleMouseLeave = () => (onMouseLeave === undefined ? doNothing() : onMouseLeave())
@@ -25,6 +26,7 @@ export default function IconButton({ iconId, disabled, onClick, onMouseEnter, on
       onClick={handleClick}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      aria-label={ariaLabel}
     >
       <Icon icon={iconId} width="25" />
     </IconButtonStyled>

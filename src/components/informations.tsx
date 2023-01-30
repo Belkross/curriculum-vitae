@@ -18,8 +18,18 @@ export default function Informations() {
         <FieldWithIcon text={content.driverLicense[lang]} iconId="mdi:car" />
         <FieldWithIcon text={content.phone[lang]} iconId="mdi:phone" />
         <FieldWithIcon text={content.mail[lang]} iconId="mdi:mail" />
-        <LinkWithIconButton iconId="mdi:github" href={content.github[lang]} anchor={content.github[lang]} />
-        <LinkWithIconButton iconId="mdi:linkedin" href={content.linkedin[lang]} anchor={content.linkedin[lang]} />
+        <LinkWithIconButton
+          iconId="mdi:github"
+          href={content.github[lang]}
+          anchor={content.github[lang]}
+          ariaLabel="github"
+        />
+        <LinkWithIconButton
+          iconId="mdi:linkedin"
+          href={content.linkedin[lang]}
+          anchor={content.linkedin[lang]}
+          ariaLabel="linkedin"
+        />
       </Address>
 
       <article>

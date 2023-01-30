@@ -6,9 +6,10 @@ type Props = {
   iconId: string
   anchor: string
   href: string
+  ariaLabel?: string
 }
 
-export default function LinkWithIconButton({ iconId, anchor, href }: Props) {
+export default function LinkWithIconButton({ iconId, anchor, href, ariaLabel }: Props) {
   const [mouseOverButton, setMouseOverButton] = useState(false)
 
   const toggleMouseOverState = () => setMouseOverButton((previousState) => !previousState)
@@ -21,6 +22,7 @@ export default function LinkWithIconButton({ iconId, anchor, href }: Props) {
         onClick={handleClick}
         onMouseEnter={toggleMouseOverState}
         onMouseLeave={toggleMouseOverState}
+        ariaLabel={ariaLabel}
       />
       <A href={href} mouseOverButton={mouseOverButton}>
         {anchor}
