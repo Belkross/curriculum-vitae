@@ -1,6 +1,8 @@
 # Curriculum Vitae
 
-My personal resume.
+My personal resume. 
+
+Live version here: [cv.belkross.com](https://cv.belkross.com)
 
 ## Features
 
@@ -10,6 +12,7 @@ My personal resume.
 - Accessiblity, SEO
 
 Lighthouse results:
+
 ![Lighthouse diagrams](./src/images/lighthouse-cv.png)
 
 ## Built with
