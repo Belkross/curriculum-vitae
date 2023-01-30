@@ -1,29 +1,53 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:styled-components-a11y/recommended",
+    "plugin:sonarjs/recommended",
+    "plugin:unicorn/recommended",
+    "plugin:github/typescript",
+    "plugin:react-hooks/recommended",
+    "plugin:array-func/all",
+    "plugin:import/typescript",
+    "plugin:promise/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:styled-components-a11y/recommended"
-    ],
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": "latest",
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react",
-        "@typescript-eslint",
-        "better-styled-components",
-        "styled-components-a11y"
-    ],
-    "rules": {
-        "better-styled-components/sort-declarations-alphabetically": 2
-    }
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "better-styled-components",
+    "styled-components-a11y",
+    "unicorn",
+    "sonarjs",
+    "github",
+    "react-hooks",
+    "array-func",
+    "import",
+    "promise"
+  ],
+  "rules": {
+    "better-styled-components/sort-declarations-alphabetically": 2,
+    "unicorn/switch-case-braces": "off",
+    "unicorn/no-null": "off",
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "replacements": {
+          "props": false
+        }
+      }
+    ]
+  }
 }

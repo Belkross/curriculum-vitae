@@ -16,8 +16,8 @@ type Props = {
 export default function ProviderLanguage({ children }: Props) {
   const [language, setLanguage] = useState(defaultLanguage)
 
-  const toggleLanguage = (language: LanguageValue) => {
-    setLanguage(language)
+  const toggleLanguage = (lang: LanguageValue) => {
+    setLanguage(lang)
   }
 
   return (

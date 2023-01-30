@@ -11,7 +11,7 @@ type Props = {
 export default function LinkWithIconButton({ iconId, anchor, href }: Props) {
   const [mouseOverButton, setMouseOverButton] = useState(false)
 
-  const toggleMouseOverState = () => setMouseOverButton((prevState) => !prevState)
+  const toggleMouseOverState = () => setMouseOverButton((previousState) => !previousState)
   const handleClick = () => window.open(`https://${href}`, "_blank")
 
   return (

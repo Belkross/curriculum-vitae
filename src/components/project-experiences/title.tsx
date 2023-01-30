@@ -11,7 +11,7 @@ export default function Title(props: ProjectExperienceProps) {
   const [mouseOverButton, setMouseOverButton] = useState(false)
   const lang = useLanguage()
 
-  const toggleMouseOverState = () => setMouseOverButton((prevState) => !prevState)
+  const toggleMouseOverState = () => setMouseOverButton((previousState) => !previousState)
   const handleClick = () => window.open(props.url[lang], "_blank")
 
   return (
