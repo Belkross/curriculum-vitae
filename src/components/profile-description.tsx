@@ -19,7 +19,7 @@ const content: PageContent = fullfillNonDefaultLanguageFields({
     en: "I’m searching for: ",
   },
   searchingFor: {
-    fr: "un premier job de développeur web frontend à temps plein. J’ai une préférence pour un poste en remote ou incluant du télétravail.",
+    fr: "un premier poste de développeur web frontend à temps plein. J’ai une préférence pour un poste en remote ou incluant du télétravail.",
     en: "a first frontend web developer full-time job. I have a preference for a remote one or including teleworking.",
   },
 })
