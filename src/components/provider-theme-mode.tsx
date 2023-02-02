@@ -1,5 +1,6 @@
-import React, { createContext, ReactElement, useContext, useState } from "react"
+import React, { createContext, ReactElement, useContext, useEffect, useState } from "react"
 import doNothing from "../functions/do-nothing"
+import localStorageKeys from "../local-storage-keys"
 
 export type ThemeModeValue = "light" | "dark"
 const defaultThemeMode: ThemeModeValue = "light"
@@ -20,7 +21,13 @@ export default function ProviderThemeMode({ children }: Props) {
   const toggleThemeMode = () => {
     const newState: ThemeModeValue = themeMode === "dark" ? "light" : "dark"
     setThemeMode(newState)
+    localStorage.setItem(localStorageKeys.themeMode, newState)
   }
+
+  useEffect(() => {
+    const themeModePreference = localStorage.getItem(localStorageKeys.themeMode)
+    if (themeModePreference === "dark" || themeModePreference === "light") setThemeMode(themeModePreference)
+  }, [])
 
   return (
     <ThemeModeContext.Provider value={themeMode}>

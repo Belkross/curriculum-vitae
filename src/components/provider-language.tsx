@@ -1,5 +1,6 @@
-import React, { createContext, useContext, ReactElement, useState } from "react"
+import React, { createContext, useContext, ReactElement, useState, useEffect } from "react"
 import { doNothingWith } from "../functions/do-nothing"
+import localStorageKeys from "../local-storage-keys"
 
 export type LanguageValue = "fr" | "en"
 const defaultLanguage: LanguageValue = "fr"
@@ -16,9 +17,15 @@ type Props = {
 export default function ProviderLanguage({ children }: Props) {
   const [language, setLanguage] = useState(defaultLanguage)
 
-  const toggleLanguage = (lang: LanguageValue) => {
-    setLanguage(lang)
+  const toggleLanguage = (newLanguage: LanguageValue) => {
+    setLanguage(newLanguage)
+    localStorage.setItem(localStorageKeys.language, newLanguage)
   }
+
+  useEffect(() => {
+    const languagePreference = localStorage.getItem(localStorageKeys.language)
+    if (languagePreference === "fr" || languagePreference === "en") setLanguage(languagePreference)
+  }, [])
 
   return (
     <LanguageContext.Provider value={language}>
