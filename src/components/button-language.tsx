@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
 import styled from "styled-components"
+import { Button as defaultButton } from "../theme/components"
 import palette from "../theme/palette"
 import shapes from "../theme/shapes"
 import { LanguageValue, ToggleLanguageContext, useLanguage } from "./provider-language"
@@ -24,15 +25,11 @@ type ButtonProps = {
   readonly isActive: boolean
 }
 
-const Button = styled.button<ButtonProps>`
+const Button = styled(defaultButton)<ButtonProps>`
   background-color: ${(props) => (props.isActive ? palette.primary : palette.primaryContent)};
-  border: 1px solid ${palette.primary};
-  border-radius: ${shapes.borderRadius};
-  color: ${palette.textButtons};
-  font-size: 17px;
+  box-shadow: none;
   font-weight: 600;
-  height: 35px;
-  width: 35px;
+  height: ${shapes.buttonSize};
   :hover {
     background-color: ${(props) => (props.isActive ? "inherit" : palette.secondaryContent)};
   }

@@ -1,6 +1,7 @@
 import { Icon } from "@iconify/react"
 import React from "react"
 import styled from "styled-components"
+import shapes from "../theme/shapes"
 
 type Props = {
   iconId: string
@@ -10,7 +11,7 @@ type Props = {
 export default function FieldWithIcon({ iconId, text }: Props) {
   return (
     <Container>
-      <Icon icon={iconId} width="28px" height="28px" style={style_icon} />
+      <StyledIcon icon={iconId} />
       <Typography>{text}</Typography>
     </Container>
   )
@@ -26,9 +27,11 @@ const Container = styled.div`
   width: 100%;
 `
 
-const style_icon = {
-  flexShrink: 0,
-}
+const StyledIcon = styled(Icon)`
+  flex-shrink: 0;
+  height: ${shapes.iconSize + 4}px;
+  width: ${shapes.iconSize + 4}px;
+`
 
 const Typography = styled.p`
   font-style: normal;

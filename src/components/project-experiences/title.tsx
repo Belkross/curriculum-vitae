@@ -47,8 +47,8 @@ const StyledIcon = styled(Icon)`
   border-radius: ${shapes.borderRadius};
   box-shadow: ${shadow[2]};
   color: ${palette.textButtons};
-  height: 25px;
-  width: 25px;
+  height: ${shapes.iconSize}px;
+  width: ${shapes.iconSize}px;
   :hover {
     background-color: ${palette.primaryContent};
   }

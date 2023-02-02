@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Icon } from "@iconify/react"
+import shapes from "../theme/shapes"
 
 type Props = {
   iconId: string
@@ -10,7 +11,7 @@ type Props = {
 export default function SkillWithIcon({ iconId, text }: Props) {
   return (
     <Container>
-      <Icon icon={iconId} width="25" />
+      <Icon icon={iconId} width={shapes.iconSize} />
       <Typography>{text}</Typography>
     </Container>
   )

@@ -20,4 +20,5 @@ const Container = styled.div`
   box-shadow: ${shadow[2]};
   display: flex;
   flex-flow: row nowrap;
+  height: ${shapes.buttonSize};
 `
