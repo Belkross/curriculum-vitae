@@ -2,7 +2,7 @@ import React, { createContext, ReactElement, useContext, useState } from "react"
 import doNothing from "../functions/do-nothing"
 
 export type ThemeModeValue = "light" | "dark"
-const defaultThemeMode: ThemeModeValue = "dark"
+const defaultThemeMode: ThemeModeValue = "light"
 
 const ThemeModeContext = createContext<ThemeModeValue>(defaultThemeMode)
 export const useThemeMode = () => useContext(ThemeModeContext)
