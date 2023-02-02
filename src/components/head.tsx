@@ -1,10 +1,12 @@
 import React from "react"
+import favicon from "../images/favicon.svg"
 
 export function Head() {
   return (
     <React.Fragment>
       <html lang="fr" />
       <title>Curriculum Vitae</title>
+      <link rel="icon" type="image/svg+xml" href={favicon} />
       <meta name="description" content={description} />
     </React.Fragment>
   )
