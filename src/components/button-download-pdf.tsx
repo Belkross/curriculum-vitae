@@ -27,7 +27,7 @@ const Anchor = styled.a`
   flex-flow: row nowrap;
   font-size: 17px;
   gap: 2px;
-  height: 34px;
+  height: 35px;
   padding: 0 4px;
   width: 70px;
   :hover {

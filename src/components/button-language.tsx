@@ -27,7 +27,6 @@ type ButtonProps = {
 const Button = styled.button<ButtonProps>`
   background-color: ${(props) => (props.isActive ? palette.primary : palette.primaryContent)};
   border: 1px solid ${palette.primary};
-  border: none;
   border-radius: ${shapes.borderRadius};
   color: ${palette.textButtons};
   font-size: 17px;

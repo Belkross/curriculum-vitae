@@ -14,6 +14,7 @@ import shapes from "../theme/shapes"
 import shadow from "../theme/shadow"
 import breakpoints from "../theme/breakpoints"
 import Photo from "../components/photo"
+import ButtonsApp from "../components/buttons-app"
 export { Head } from "../components/head"
 
 export default function IndexPage() {
@@ -21,6 +22,7 @@ export default function IndexPage() {
     <GlobalFeatures>
       <Layout>
         <PrimaryContent>
+          <ButtonsApp />
           <Header />
           <Divider />
           <ProfileDescription />
@@ -43,7 +45,7 @@ const PrimaryContent = styled.div`
   border-radius: ${shapes.borderRadius} 0 0 ${shapes.borderRadius};
   padding: 16px;
   ${breakpoints.lg} {
-    padding: 32px;
+    padding: 16px 32px 32px 32px;
   }
 `
 const SecondaryContent = styled.div`
