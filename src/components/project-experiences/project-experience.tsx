@@ -3,7 +3,7 @@ import styled from "styled-components"
 import palette from "../../theme/palette"
 import { MultiLangField, PageContent } from "../../types/types"
 import { useLanguage } from "../provider-language"
-import Title from "./title"
+import ProjectExperienceTitle from "./project-experience-title"
 
 export type ProjectExperienceProps = {
   title: MultiLangField
@@ -19,7 +19,7 @@ export default function ProjectExperience(props: ProjectExperienceProps) {
 
   return (
     <article>
-      <Title {...props} />
+      <ProjectExperienceTitle {...props} />
       <P>
         <Span>{props.projectType[lang]}</Span>
         {props.description[lang]}

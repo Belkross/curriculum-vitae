@@ -7,7 +7,7 @@ import shapes from "../../theme/shapes"
 import { useLanguage } from "../provider-language"
 import { ProjectExperienceProps } from "./project-experience"
 
-export default function Title(props: ProjectExperienceProps) {
+export default function ProjectExperienceTitle(props: ProjectExperienceProps) {
   const [mouseOverButton, setMouseOverButton] = useState(false)
   const lang = useLanguage()
 
