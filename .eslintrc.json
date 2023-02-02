@@ -10,10 +10,8 @@
     "plugin:styled-components-a11y/recommended",
     "plugin:sonarjs/recommended",
     "plugin:unicorn/recommended",
-    "plugin:github/typescript",
     "plugin:react-hooks/recommended",
     "plugin:array-func/all",
-    "plugin:import/typescript",
     "plugin:promise/recommended"
   ],
   "parser": "@typescript-eslint/parser",
@@ -31,10 +29,8 @@
     "styled-components-a11y",
     "unicorn",
     "sonarjs",
-    "github",
     "react-hooks",
     "array-func",
-    "import",
     "promise"
   ],
   "rules": {
