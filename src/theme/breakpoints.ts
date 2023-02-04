@@ -1,33 +1,8 @@
-type Breakpoints<Type> = {
-  xs: Type
-  sm: Type
-  md: Type
-  lg: Type
-  xl: Type
-  xxl: Type
-}
-type BreakpointValues = Breakpoints<number>
+type BreakpointKeys = typeof breakpointKeys[number]
+type BreakpointValues = Record<BreakpointKeys, number>
+type Breakpoints = Record<BreakpointKeys, string>
 
-class StyledBreakpoints implements Breakpoints<string> {
-  xs: string
-  sm: string
-  md: string
-  lg: string
-  xl: string
-  xxl: string
-
-  constructor(values: Breakpoints<number>) {
-    const formatToStyledComponent = (key: keyof BreakpointValues) => {
-      return `@media (min-width: ${values[key as keyof BreakpointValues]}px)`
-    }
-    this.xs = formatToStyledComponent("xs")
-    this.sm = formatToStyledComponent("sm")
-    this.md = formatToStyledComponent("md")
-    this.lg = formatToStyledComponent("lg")
-    this.xl = formatToStyledComponent("xl")
-    this.xxl = formatToStyledComponent("xxl")
-  }
-}
+const breakpointKeys = ["xs", "sm", "md", "lg", "xl", "xxl"] as const
 
 export const breakpointValues: BreakpointValues = {
   xs: 350,
@@ -38,4 +13,13 @@ export const breakpointValues: BreakpointValues = {
   xxl: 1536,
 }
 
-export default new StyledBreakpoints(breakpointValues)
+export default createBreakPoints(breakpointKeys, breakpointValues)
+
+function createMediaQueryString(value: number) {
+  return `@media (min-width: ${value}px)`
+}
+
+function createBreakPoints(keys: typeof breakpointKeys, breakpointValues: BreakpointValues) {
+  const entries = keys.map((key) => [key, createMediaQueryString(breakpointValues[key])])
+  return Object.fromEntries(entries) as Breakpoints
+}
