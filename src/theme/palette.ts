@@ -1,55 +1,28 @@
 import theme from "styled-theming"
 
-type PaletteObject<Type> = {
-  primary: Type
-  secondary: Type
-  background: Type
-  primaryContent: Type
-  secondaryContent: Type
-  paper: Type
-  text: Type
-  textButtons: Type
-  disabled: Type
-  h2: Type
-  h3: Type
-}
-type CssPalette = PaletteObject<string>
-
-class StyledThemingPalette implements PaletteObject<theme.ThemeSet> {
-  primary: theme.ThemeSet
-  secondary: theme.ThemeSet
-  background: theme.ThemeSet
-  primaryContent: theme.ThemeSet
-  secondaryContent: theme.ThemeSet
-  paper: theme.ThemeSet
-  text: theme.ThemeSet
-  textButtons: theme.ThemeSet
-  disabled: theme.ThemeSet
-  h2: theme.ThemeSet
-  h3: theme.ThemeSet
-
-  constructor(darkPalette: CssPalette, lightPalette: CssPalette) {
-    const setStyledTheming = (property: keyof StyledThemingPalette) => {
-      return theme("mode", {
-        dark: darkPalette[property],
-        light: lightPalette[property],
-      })
-    }
-    this.primary = setStyledTheming("primary")
-    this.background = setStyledTheming("background")
-    this.primaryContent = setStyledTheming("primaryContent")
-    this.secondaryContent = setStyledTheming("secondaryContent")
-    this.paper = setStyledTheming("paper")
-    this.text = setStyledTheming("text")
-    this.textButtons = setStyledTheming("textButtons")
-    this.disabled = setStyledTheming("disabled")
-    this.h3 = setStyledTheming("h3")
-    this.h2 = setStyledTheming("h2")
-    this.secondary = setStyledTheming("secondary")
-  }
+type PaletteKeys = typeof paletteKeys[number]
+type Palette = Record<PaletteKeys, string>
+type StyledThemingPalette = Record<PaletteKeys, theme.ThemeSet>
+type Palettes = typeof palettes
+type ModeValues<Type> = {
+  [Property in keyof Type]: string
 }
 
-const darkPalette: CssPalette = {
+const paletteKeys = [
+  "primary",
+  "secondary",
+  "background",
+  "primaryContent",
+  "secondaryContent",
+  "paper",
+  "text",
+  "textButtons",
+  "disabled",
+  "h2",
+  "h3",
+] as const
+
+const darkPalette: Palette = {
   primary: "#54930E",
   secondary: "#E46606",
   background: "#263238",
@@ -63,7 +36,7 @@ const darkPalette: CssPalette = {
   h3: "#E46606",
 }
 
-const lightPalette: CssPalette = {
+const lightPalette: Palette = {
   ...darkPalette,
   primary: "#51a654",
   secondary: "#DB6132",
@@ -76,4 +49,19 @@ const lightPalette: CssPalette = {
   h3: "#b13606",
 }
 
-export default new StyledThemingPalette(darkPalette, lightPalette)
+const palettes = {
+  light: lightPalette,
+  dark: darkPalette,
+}
+
+export default createStyledThemingPalette(paletteKeys, palettes)
+
+function formatToStyledTheming(key: PaletteKeys, palettes: Palettes) {
+  const modeValues: ModeValues<Palettes> = { light: palettes.light[key], dark: palettes.dark[key] }
+  return theme("mode", modeValues)
+}
+
+function createStyledThemingPalette(keys: typeof paletteKeys, palettes: Palettes) {
+  const entries = keys.map((key) => [key, formatToStyledTheming(key, palettes)])
+  return Object.fromEntries(entries) as StyledThemingPalette
+}
